@@ -1,5 +1,13 @@
 import React, { useState } from "react";
 import candereLogo from "../assets/candere.png";
+import awardOne from "../assets/award1.png";
+import awardTwo from "../assets/award2.png";
+
+const testimonialAwards = [
+	{ id: "award-1", image: awardTwo, alt: "Top 100 companies Clutch Global 2022 badge" },
+	{ id: "award-2", image: awardOne, alt: "Clutch award badge" },
+	{ id: "award-3", image: awardTwo, alt: "Top 100 companies Clutch Global 2022 badge" },
+];
 
 const testimonials = [
 	{
@@ -33,6 +41,18 @@ export default function Testimonials() {
 				<aside className="testimonials-left">
 					<h2>Our Testimonial</h2>
 					<p>A SYMPHONY OF SATISFIED VOICES!</p>
+
+					<div className="testimonials-awards" aria-label="Our awards">
+						<h3 className="testimonials-awards-title">Our Awards:</h3>
+						<div className="testimonials-awards-row" role="list">
+							{testimonialAwards.map((award) => (
+								<div className="testimonials-award-item" role="listitem" key={award.id}>
+									<img src={award.image} alt={award.alt} className="testimonials-award-image" />
+								</div>
+							))}
+						</div>
+						<p className="testimonials-award-description">Embark on an inspiring journey through the harmonious <br /> echoes of client satisfaction.</p>
+					</div>
 				</aside>
 
 				<article className="testimonial-card">
